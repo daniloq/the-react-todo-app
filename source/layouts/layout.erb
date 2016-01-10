@@ -14,12 +14,11 @@
     <!-- React -->
     <%= javascript_include_tag 'https://fb.me/react-0.14.6.min.js' %>
     <%= javascript_include_tag 'https://fb.me/react-dom-0.14.6.min.js' %>
-    <%= javascript_include_tag 'https://fb.me/JSXTransformer-0.13.3.js' %>
-
-    <%= javascript_include_tag  'all' %>
   </head>
 
   <body class='<%= page_classes %>'>
     <%= yield %>
+    <!-- Components -->
+    <%= javascript_include_tag 'build/script.js' %> 
   </body>
 </html>
