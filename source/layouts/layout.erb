@@ -9,7 +9,7 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title || 'Did It' %></title>
 
-    <%= stylesheet_link_tag 'normalize', 'application' %>
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css','normalize', 'application' %>
 
     <!-- React -->
     <%= javascript_include_tag 'https://fb.me/react-0.14.6.min.js' %>
@@ -19,6 +19,6 @@
   <body class='<%= page_classes %>'>
     <%= yield %>
     <!-- Components -->
-    <%= javascript_include_tag 'build/script.js' %> 
+    <%= javascript_include_tag 'build/script.js' %>
   </body>
 </html>

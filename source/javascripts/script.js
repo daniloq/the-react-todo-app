@@ -9,7 +9,7 @@ var Todo = React.createClass({
         <div className='form-inline'>
           <div className='form-group'>
             <input className='form-control' placeholder='Add to do' />
-            <button>+</button>
+            <button className='btn btn-default btn-sm'>+</button>
           </div>
         </div>
         <ul>
