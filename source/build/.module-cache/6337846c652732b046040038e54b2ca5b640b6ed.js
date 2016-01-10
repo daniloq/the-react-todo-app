@@ -18,7 +18,7 @@ var Todo = React.createClass({displayName: "Todo",
   save: function(){
     var val = this.refs.newValue.getDOMNode().value;
     // alert('todo ' + val + ' saved!');
-    console.log(this)
+    console.log(this);
     this.setState({editing:false});
   },
 

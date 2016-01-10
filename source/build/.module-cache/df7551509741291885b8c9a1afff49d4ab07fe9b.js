@@ -17,8 +17,7 @@ var Todo = React.createClass({displayName: "Todo",
 
   save: function(){
     var val = this.refs.newValue.getDOMNode().value;
-    // alert('todo ' + val + ' saved!');
-    console.log(this)
+    alert('todo' + val + 'saved!');
     this.setState({editing:false});
   },
 
@@ -54,50 +53,19 @@ var Todo = React.createClass({displayName: "Todo",
 
 });
 
-var TodoList = React.createClass({displayName: "TodoList",
-
-  getInitialState: function(){
-    return {
-      todos: [
-        'Call Robyn',
-        'Pay phone bill',
-        'Make dentist appointment'
-      ]
-    };
-  },
-
-  update: function(newValue, i){
-    var arr = this.state.todos;
-    arr[i] = newValue;
-    this.setState({todos: arr});
-  },
-
-  eachTodo: function(todo, i){
-    return
-      React.createElement(Todo, {key: i, 
-          index: i, 
-          onChange: this.update}, 
-        todo
+React.render(
+  React.createElement("div", null, 
+    React.createElement("h1", null, "Things to do"), 
+    React.createElement("div", {className: "form-inline"}, 
+      React.createElement("div", {className: "form-group"}, 
+        React.createElement("input", {className: "form-control", placeholder: "Add to do"}), 
+        React.createElement("button", {className: "btn btn-default btn-sm"}, "+")
       )
-  },
-
-  render: function(){
-    return(
-      React.createElement("div", null, 
-        React.createElement("h1", null, "Things to do"), 
-        React.createElement("div", {className: "form-inline"}, 
-          React.createElement("div", {className: "form-group"}, 
-            React.createElement("input", {className: "form-control", placeholder: "Add to do"}), 
-            React.createElement("button", {className: "btn btn-default btn-sm"}, "+")
-          )
-        ), 
-        React.createElement("ul", null, 
-          this.state.todos.map(this.eachTodo)
-        )
-      )
-    );
-  }
-
-});
-
-React.render(React.createElement(TodoList, null), document.getElementById('todo'));
+    ), 
+    React.createElement("ul", null, 
+      React.createElement(Todo, null, "Call Robyn"), 
+      React.createElement(Todo, null, "Pay phone bill"), 
+      React.createElement(Todo, null, "Make dentist appointment")
+    )
+  ),
+  document.getElementById('todo'));

@@ -17,8 +17,7 @@ var Todo = React.createClass({displayName: "Todo",
 
   save: function(){
     var val = this.refs.newValue.getDOMNode().value;
-    // alert('todo ' + val + ' saved!');
-    console.log(this)
+    alert('todo ' + val + ' saved!');
     this.setState({editing:false});
   },
 
@@ -66,21 +65,6 @@ var TodoList = React.createClass({displayName: "TodoList",
     };
   },
 
-  update: function(newValue, i){
-    var arr = this.state.todos;
-    arr[i] = newValue;
-    this.setState({todos: arr});
-  },
-
-  eachTodo: function(todo, i){
-    return
-      React.createElement(Todo, {key: i, 
-          index: i, 
-          onChange: this.update}, 
-        todo
-      )
-  },
-
   render: function(){
     return(
       React.createElement("div", null, 
@@ -92,7 +76,9 @@ var TodoList = React.createClass({displayName: "TodoList",
           )
         ), 
         React.createElement("ul", null, 
-          this.state.todos.map(this.eachTodo)
+          this.state.todos.map(function(todo){
+            return React.createElement(Todo, null, todo)
+          })
         )
       )
     );
