@@ -1,2 +1,2 @@
 # the-react-todo-app
-Simple todo app built with react and middleman.
+Simple todo app built with react and middleman. (WIP)
