@@ -30,7 +30,7 @@ var Todo = React.createClass({
                             {this.props.children}
                         </span>
 
-                        <button onClick={this.remove} className="button"/>
+                        <button onClick={this.remove} className="btn"/>
 
 
                     </li>
@@ -48,7 +48,7 @@ var Todo = React.createClass({
                             <input placeholder="Edit todo" type="text" ref="newValue" defaultValue={this.props.children}/>
                         </span>
 
-                        <button onClick={this.save} className="button"/>
+                        <button onClick={this.save} className="btn"/>
 
 
                     </li>
@@ -110,7 +110,7 @@ var TodoList = React.createClass({
 
                     <div className="form-group">
                         <input className="form-control" placeholder="Add Todo" />
-                        <button className="button">+</button>
+                        <button className="btn">+</button>
                     </div>
 
                 </div>
